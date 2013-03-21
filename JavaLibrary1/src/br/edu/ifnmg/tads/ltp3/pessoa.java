@@ -4,6 +4,7 @@
  */
 package br.edu.ifnmg.tads.ltp3;
 
+import java.util.List;
 import java.util.Objects;
 
 /**
@@ -13,6 +14,9 @@ import java.util.Objects;
 public class pessoa {
     private int id;
     private String nome;
+    private List<email> emails;
+    private List<endereco> enderecos;
+    private List<telefone> telefones;
 
     public int getId() {
         return id;
@@ -64,5 +68,60 @@ public class pessoa {
     @Override
     public String toString() {
         return "Pessoa{" + "id=" + id + ", nome=" + nome + '}';
+    }
+
+    public List<email> getEmails() {
+        return emails;
+    }
+
+    public void setEmails(List<email> emails) {
+        this.emails = emails;
+    }
+
+    public List<endereco> getEndecos() {
+        return enderecos;
+    }
+
+    public void setEndecos(List<endereco> endecos) {
+        this.enderecos = endecos;
+    }
+
+    public List<telefone> getTelefones() {
+        return telefones;
+    }
+
+    public void setTelefones(List<telefone> telefones) {
+        this.telefones = telefones;
+    }
+    
+    public void addEmail(email obj){
+        if(!emails.contains(obj)){
+        emails.add(obj);
+        }        
+    }
+    public void removeEmail(email obj){
+        if(emails.contains(obj)){
+            emails.remove(obj);
+        }
+    }
+    public void addEndereco(endereco obj){
+        if(!enderecos.contains(obj)){
+        enderecos.add(obj);
+        }        
+    }
+    public void removeEndereco(endereco obj){
+        if(enderecos.contains(obj)){
+            enderecos.remove(obj);
+        }
+    }
+    public void addTelefone(telefone obj){
+        if(!telefones.contains(obj)){
+        telefones.add(obj);
+        }        
+    }
+    public void removeTelefone(telefone obj){
+        if(telefones.contains(obj)){
+            telefones.remove(obj);
+        }
     }
 }
